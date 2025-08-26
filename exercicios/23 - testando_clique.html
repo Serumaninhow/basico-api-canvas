@@ -1,0 +1,19 @@
+<button id="botao">clique-me</button>
+
+<script>
+    /*
+    Criando um teste para clique do mouse
+    */
+
+    let botao = document.getElementById("botao");
+    botao.onclick = () => alert("Clique simples!");
+    botao.onmousedown = () => console.log("Mouse pressionado");
+    botao.onmouseup = () => console.log("Mouse solto");
+    botao.onmouseover = () => console.log("Entrou no botão");
+    botao.onmouseout = () => console.log("Saiu do botão");
+
+    botao.oncontextmenu = function(){
+      event.preventDefault(); // impede o menu do navegador
+      alert("Clique direito!");
+    }
+</script>

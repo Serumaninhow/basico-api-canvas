@@ -1,0 +1,38 @@
+<canvas id="quadro" width="400" height="400"></canvas>
+
+<script>
+    /*
+    Criando bola pulsante na cor vermelha
+    */
+    var raio = 20;
+    var sentido = 1;
+    function restauraTela(){
+        var tela = document.getElementById("quadro");
+        var pincel = tela.getContext("2d");
+        pincel.fillStyle = 'lightgrey';
+        pincel.fillRect(0, 0, tela.clientWidth, tela.clientHeight);
+    }
+
+    function desenhaBola(x, y, r){
+        var tela = document.getElementById("quadro");
+        var pincel = tela.getContext("2d");
+        pincel.fillStyle = "red";
+        pincel.beginPath();
+        pincel.arc(x, y, r, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function atualizaTela(){
+        restauraTela();
+        if(raio > 40){
+            sentido = -1;
+        }
+        else if(raio < 20){
+            sentido = 1;
+        }
+        desenhaBola(200, 200, raio);
+        raio += sentido;
+    }
+
+    setInterval(atualizaTela, 10);
+</script>

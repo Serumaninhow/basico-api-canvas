@@ -1,0 +1,41 @@
+<canvas id="quadro" width="600" height="400"></canvas>
+
+<script>
+    /*
+    Criando bola animada
+    */
+    var tela = document.getElementById("quadro");
+    var pincel = tela.getContext('2d');
+
+    function desenhaCirculo(x, y, raio){
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpaTela(){
+    pincel.clearRect(0, 0, 600, 400);
+    }
+
+    var x = 20;
+    var sentido = 1;
+    velocidade = 25;
+
+    function atualizaTela(){
+        limpaTela();
+        if(x > 590)
+        {
+            sentido = -1;
+        }
+        else if(x < 10)
+        {
+            sentido = 1;
+        }
+        desenhaCirculo(x, 20, 10);
+        x = x + sentido * velocidade;
+    }
+
+    setInterval(atualizaTela, 1);
+</script>

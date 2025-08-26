@@ -1,0 +1,36 @@
+<canvas id ="quadro" width="600"  height="400"></canvas>
+
+<script>
+    /*
+    Criando esquadro de uma outra maneira
+    */
+    var tela = document.getElementById("quadro");
+    var pincel = tela.getContext('2d');
+    var cores = ["green", "blue", "red"];
+
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenha_circulo(evento)
+    {
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        pincel.fillStyle="black";
+        pincel.beginPath();
+        
+        pincel.arc(x, y, 5, 0, 2*3.14);
+        pincel.fill();
+    }
+
+    tela.onmousedown = function()
+    {
+        tela.onmousemove = desenha_circulo;
+    };
+
+    tela.onmouseup = function()
+    {
+        tela.onmousemove = false;
+    };
+
+</script>

@@ -1,0 +1,20 @@
+<input type="text" id="meuInput" placeholder="Digite algo...">
+<p>Tecla pressionada: <span id="codigoTecla"></span></p>
+
+<script>
+    /*
+    Criando um teste para saber código das teclas do teclado
+    */
+    const meuInput = document.getElementById('meuInput');
+    const spanCodigoTecla = document.getElementById('codigoTecla');
+
+    meuInput.addEventListener('keydown', function(event) {
+        // event.key fornece o nome da tecla (por exemplo, "Enter", "a", "Control")
+        const nomeDaTecla = event.key;
+        // event.keyCode fornece o código numérico da tecla (mais antigo, mas ainda útil para algumas teclas)
+        const codigoDaTecla = event.keyCode; // ou event.which
+
+        spanCodigoTecla.textContent = `Nome: "${nomeDaTecla}" (Código: ${codigoDaTecla})`;
+        console.log('Evento de tecla:', event); // Para ver todas as propriedades do objeto event
+    });
+</script>

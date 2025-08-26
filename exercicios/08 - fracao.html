@@ -1,0 +1,35 @@
+<canvas id="quadro" width="700" height="500"></canvas>
+
+<script>
+    /*
+    Criando mini quiz da fração representada
+    */    
+    var id = "quadro";
+    function desenhaQuadrado(x, y, tamanho, cor){
+        var t = tamanho;
+        var tela = document.getElementById(id);
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, t, t);
+
+        pincel.strokeStyle = 'black';    
+        pincel.strokeRect(x, y, t, t);
+    }
+    function desenhaTexto(texto, x, y){
+        var tela = document.getElementById(id);
+        var pincel = tela.getContext('2d');
+        pincel.font = "20px Arial";
+        pincel.fillStyle = "black";
+        pincel.fillText(texto, x, y);
+    }
+    desenhaTexto("Qual é a fração?", 50, 30);
+
+    let y = 50;
+
+    desenhaQuadrado(50,y, 100,"green");
+    desenhaQuadrado(150,y, 100,"green");
+    desenhaQuadrado(250,y, 100,"green");
+    desenhaQuadrado(350,y, 100,"white");
+
+</script>

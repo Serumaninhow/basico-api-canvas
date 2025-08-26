@@ -1,0 +1,53 @@
+<canvas id ="quadro" width="600"  height="400"></canvas>
+
+<script>
+    /*
+    Criando quadro que desenha círculos ao clique do usuário
+    */
+    var tela = document.getElementById("quadro");
+    var pincel = tela.getContext('2d');
+    var cores = ["green", "blue", "red"];
+
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0, 0, 600, 400);
+
+    var cores = ["green", "blue", "red"];
+    var indice = 0;
+    var raio = 10;
+
+    function registra_evento(evento){
+        console.log(evento);
+    }
+
+    function troca_cor(){
+        indice++;
+        return false;
+    }
+
+    tela.oncontextmenu = troca_cor;
+
+    function desenha_circulo(evento){
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        pincel.fillStyle=cores[indice % 3];
+        pincel.beginPath();
+
+        if(evento.shiftKey && evento.altKey){
+            raio = 30;
+        }
+        else if(evento.shiftKey && raio < 40){
+            raio = raio + 10;
+        }
+        else if(evento.altKey && raio > 6){
+            raio = raio - 5;
+        }
+        
+        pincel.arc(x, y, raio, 0, 2*3.14);
+        pincel.fill();
+
+        console.log("clicado em: " + x + ", " + y);
+    }
+
+    tela.onclick = desenha_circulo;
+
+</script>

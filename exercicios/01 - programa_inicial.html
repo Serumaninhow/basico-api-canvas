@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<canvas id="quadro" width="600" height="400"></canvas>
+
+<script>
+    /*
+    Criando um quadro e algumas figuras
+    */
+    let frame = document.getElementById("quadro");
+    let pincel = frame.getContext("2d");
+
+
+    pincel.fillStyle = "green";
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(200, 0, 400, 400);
+
+    pincel.fillStyle = "red";
+    pincel.fillRect(400, 0, 600, 400);
+
+    pincel.fillStyle = "yellow";
+    pincel.beginPath();
+    pincel.moveTo(300, 200);
+    pincel.lineTo(200, 400);
+    pincel.lineTo(400, 400);
+    pincel.fill();
+
+    
+    pincel.fillStyle = "blue";
+    pincel.beginPath();
+    pincel.arc(300, 200, 100, 0, 2 * 3.14);
+    pincel.fill();
+
+    // ref https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+</script>
+

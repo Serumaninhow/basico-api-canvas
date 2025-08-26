@@ -1,0 +1,24 @@
+<canvas id="quadro" width="600" height="400"></canvas>
+
+<script>
+    /*
+    Loop que preenche a tela de quadrados verdes
+    */
+    function desenhaQuadrado(x, y, cor){
+        var tela = document.getElementById("quadro");
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, 50, 50);
+
+        pincel.strokeStyle = 'black';    
+        pincel.strokeRect(x, y, 50, 50);
+    }
+
+for(let i = 0; i < 400; i = i + 50){
+    for(let j = 0; j < 600; j = j + 50){
+        desenhaQuadrado(j, i, "green");
+    }
+}
+
+</script>

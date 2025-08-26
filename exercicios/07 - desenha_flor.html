@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<canvas id="quadro" width="600" height="400">
+
+</canvas>
+
+<script>
+    /*
+    Desenhando uma flor de bolinhas
+    */
+    let frame = document.getElementById("quadro");
+    let pincel = frame.getContext("2d");
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function circulo(idQuadro, cor, x_centro, y_centro, raio){
+        let frame = document.getElementById(idQuadro);
+        let pincel = frame.getContext("2d");
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x_centro, y_centro, raio, 0, 2 * 3.14);
+        pincel.fill();
+    }
+    function flor(x, y){
+        id = "quadro";
+        circulo(id, "red", x, y, 10);
+        circulo(id, "yellow", x, y-20, 10);
+        circulo(id, "blue", x, y+20, 10);
+        circulo(id, "black", x+20, y, 10);
+        circulo(id, "orange", x-20, y, 10);
+    }
+
+    flor(300, 200);
+</script>
+

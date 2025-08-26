@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<canvas id="quadro" width="600" height="400">
+
+</canvas>
+
+<script>
+    /*
+    Criando um esquadro fazendo um triângulo preto e outro branco menor em cima
+    */
+    let frame = document.getElementById("quadro");
+    let pincel = frame.getContext("2d");
+
+    pincel.fillStyle = "white";
+    pincel.fillRect(0, 0, 600, 400);
+
+    pincel.fillStyle = "black";
+    pincel.beginPath();
+    pincel.moveTo(50, 50);
+    pincel.lineTo(50, 400);
+    pincel.lineTo(400, 400);
+    pincel.fill();
+
+    pincel.fillStyle = "white";
+    pincel.beginPath();
+    pincel.moveTo(100, 175);
+    pincel.lineTo(100, 350);
+    pincel.lineTo(275, 350);
+    pincel.fill();
+
+
+
+    // ref https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+</script>

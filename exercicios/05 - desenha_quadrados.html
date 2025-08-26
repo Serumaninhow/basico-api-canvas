@@ -1,0 +1,23 @@
+<canvas id="quadro" width="600" height="400"></canvas>
+
+<script>
+    /*
+    Criando quadrados a partir de uma função criada
+    */
+    function desenhaQuadrado(x, y, cor){
+        var tela = document.getElementById("quadro");
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, 50, 50);
+
+        pincel.strokeStyle = 'black';    
+        pincel.strokeRect(x, y, 50, 50);
+    }
+
+desenhaQuadrado(0,0,"blue");
+desenhaQuadrado(50,0,"red");
+desenhaQuadrado(0,50,"yellow");
+desenhaQuadrado(50,50,"purple");
+
+</script>
