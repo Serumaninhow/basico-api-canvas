@@ -2,7 +2,7 @@
 
 Começa-se definindo o frame no HTML, capta-se essa referencia no JavaScript, e depois se defini o elemento que poderá colorir a tela. Um exemplo abaixo de como fazer esse modelo em um arquivo `.html`:
 
-```
+```html
 <canvas id="quadro" width="600" height="400">
 
 <script>
@@ -15,7 +15,7 @@ Começa-se definindo o frame no HTML, capta-se essa referencia no JavaScript, e 
 
 Para colorir uma forma retangular, pode-se fazer:
 
-```
+```html
 <canvas id="quadro" width="600" height="400">
 
 <script>
@@ -31,7 +31,7 @@ Para colorir uma forma retangular, pode-se fazer:
 
 Para colorir um triângulo, pode-se executar o seguinte passo a passo:
 
-```
+```html
 <canvas id="quadro" width="600" height="400">
 
 <script>
@@ -53,7 +53,7 @@ Para colorir um triângulo, pode-se executar o seguinte passo a passo:
 
 Para colorir um círculo, pode-se realizar o seguinte esquema:
 
-```
+```html
 <canvas id="quadro" width="600" height="400">
 
 <script>
@@ -113,7 +113,7 @@ Abaixo estão eventos de mouse, que são propriedades/atributos que podem influe
 
 #### Exemplo prático
 
-```
+```html
 <button id="botao">clique-me</button>
 
 <script>
@@ -138,7 +138,7 @@ Abaixo estão eventos de mouse, que são propriedades/atributos que podem influe
 
 Para utilizar interações com o teclado, pode-se descobrir a tecla usada pelo seguinte trecho.
 
-```
+```html
 <input type="text" id="meuInput" placeholder="Digite algo...">
 <p>Tecla pressionada: <span id="codigoTecla"></span></p>
 
@@ -164,7 +164,7 @@ Para gerar o quadro consideramos os seguintes x passos:
 
 1) Criar um quadro de 1200x800, um botão para mudar a cor do pincel, definir a borda do quadro e referenciar todos os elementos.
 
-```
+```html
 <canvas id ="quadro" width="1200"  height="800"></canvas>
 
 Escolha uma cor <input id="paleta" type="color">
@@ -183,7 +183,7 @@ Escolha uma cor <input id="paleta" type="color">
 
 2) Função para desenhar na posição do ponteiro do mouse e para apagar o quadro.
 
-```
+```js
     function desenha_circulo(evento){
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
@@ -208,7 +208,7 @@ Escolha uma cor <input id="paleta" type="color">
 
 3) Relacionar escrever na tela enquanto se movimenta o mouse e mantendo o botão esquerdo precionado, e parar quando soltar; também relacionar o gatilho de apagar a tela no botão direito.
 
-```
+```js
     tela.onmousedown = function(){
         tela.onmousemove = desenha_circulo;
     };
@@ -222,7 +222,7 @@ Escolha uma cor <input id="paleta" type="color">
 
 O conjunto desses passos constroem o código abaixo do quadro para desenho.
 
-```
+```html
 <canvas id ="quadro" width="1200"  height="800"></canvas>
 
 Escolha uma cor <input id="paleta" type="color">
@@ -278,7 +278,7 @@ Uma primeira maneira de animar elementos no canvas é simular o movimento, apaga
 
 Segue o exemplo abaixo de uma bola pulsante.
 
-```
+```html
 <canvas id="quadro" width="400" height="400"></canvas>
 
 <script>
